@@ -4,10 +4,10 @@ import { ArrowDown } from "lucide-react";
 const HeroSection = () => {
     return (
         <section
-            id="inicio"
-            className="relative min-h-screen flex items-center justify-center section-padding bg-primary"
+        id="inicio"
+        className="relative min-h-screen flex items-center justify-center section-padding bg-primary"
         >
-            <div className="max-w-4x1 mx-auto text-center">
+            <div className="max-w-4xl mx-auto text-center">
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -16,18 +16,18 @@ const HeroSection = () => {
                 >
                     Bienvenido a mi portfolio
                 </motion.p>
-                
+
                 <motion.h1
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4, duration: 0.7 }}
-                    className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground leading-[0.95] mb-6"
+                    className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground leading-[0.95] md-6"
                 >
                     Software
-                <br />
-                <span className="text-primary-foreground/40">Developer</span>
+                    <br />
+                    <span className="text-primary-foreground/40">Developer</span>
                 </motion.h1>
-
+                
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -36,7 +36,7 @@ const HeroSection = () => {
                 >
                     Construyo experiencias digitales únicas con pasión por el diseño y la tecnología.
                 </motion.p>
-                
+
                 <motion.a
                     href="#acerca"
                     initial={{ opacity: 0 }}
@@ -48,12 +48,12 @@ const HeroSection = () => {
                     <ArrowDown size={16} className="animate-bounce" />
                 </motion.a>
             </div>
-            
+
             {/* Decorative grid */}
             <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
                 <div className="w-full h-full" style={{
-                    backgroundImage: "linear-gradient(hsl(0 0% 100%) 1px, transparent 1px)",
-                    backgroundSize: "60px 60px"
+                backgroundImage: "linear-gradient(hsl(0 0% 100%) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 100%) 1px, transparent 1px)",
+                backgroundSize: "60px 60px"
                 }} />
             </div>
         </section>
