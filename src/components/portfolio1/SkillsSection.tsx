@@ -1,5 +1,4 @@
 import { motion, useInView } from "framer-motion";
-
 import { useRef } from "react";
 
 const categories = [
@@ -7,7 +6,37 @@ const categories = [
         title: "Frontend",
         skills: [
             { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"},
-            { name: "CSS", icon: "https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/css3/css3-original.svg"}
+            { name: "CSS", icon: "https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/css3/css3-original.svg"},
+            { name: "JavaScript", icon: "https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/javascript/javascript-original.svg"},
+            { name: "TypeScript", icon: "https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/typescript/typescript-original.svg"},
+            { name: "Tailwindcss", icon: "https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/tailwindcss/tailwindcss-original.svg"},
+            { name: "React", icon: "https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/react/react-original.svg"},
+            { name: "Reflex", icon: "https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/reflex/reflex-original.svg"},
+        ],
+    },
+    {
+        title: "Backend",
+        skills: [
+            { name: "Node.js", icon: "https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/nodejs/nodejs-plain.svg"},
+            { name: "Python", icon: "https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/python/python-original.svg"},
+        ],
+    },
+    {
+        title: "Herramientas y Bases de Datos",
+        skills: [
+            { name: "Git", icon:"https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/git/git-original.svg"},
+            { name: "Github", icon:"https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/github/github-original.svg"},
+            { name: "SQlite", icon:"https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/sqlite/sqlite-original.svg"},
+            { name: "PostgreSQL", icon:"https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/postgresql/postgresql-plain.svg"},
+            { name: "Docker", icon:"https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/docker/docker-original.svg"},
+            { name: "Trello", icon:"https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/trello/trello-original.svg"},
+            
+        ],
+    },
+    {
+        title: "Testing / QA",
+        skills: [
+            { name: "Cypress", icon: "https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/cypressio/cypressio-plain.svg"}
         ]
     }
 ];
@@ -56,7 +85,8 @@ const SkillsSection = () => {
                                         initial={{ opacity: 0, scale: 0.8 }}
                                         animate={isInView ? { opacity: 1, scale: 1 } : {}}
                                         transition={{ duration: 0.3, delay: 0.3 + catIndex * 0.1 + i * 0.05 }}
-                                        className="flex flex-col items-center gap-2 w-20 rounded-lg bg-background p-3 shadow-sm border border-border/50 hover:shadow-md transition-shadow"
+                                        whileHover={{ scale: 1.15, backgroundColor: "#808080", transition: {duration: 0.1} }}
+                                        className="flex flex-col items-center gap-2 w-20 rounded-lg bg-background p-3 shadow-sm border border-border/50 cursor-auto"
                                     >
                                         <img
                                             src={skill.icon}

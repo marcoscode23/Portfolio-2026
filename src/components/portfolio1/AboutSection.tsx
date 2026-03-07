@@ -28,12 +28,15 @@ const AboutSection = () => {
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.7, delay: 0.2 }}
                     >
-                        <div className="aspect-[4/5] bg-secondary rounded-sm overflow-hidden relative">
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="w-32 h-32 rounded-full bg-primary/10 flex items-center justify-center">
-                                    <span className="font-heading text-4xl font-bold text-foreground">JD</span>
-                                </div>
-                            </div>
+                        <div className="flex items-center justify-center h-full">
+                            <motion.div
+                                animate={{ y: [0, -15, 0] }}
+                                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut"}}
+                                className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl"
+                            >
+                                <img src="/fotoperfil.png" alt="Foto de perfil" className="w-full h-full object-cover" />
+
+                            </motion.div>
                         </div>
                     </motion.div>
 
