@@ -1,83 +1,168 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink, Github } from "lucide-react";
+import { MoveRight } from "lucide-react";
 
+type Icon = {
+    src: string;
+    alt: string;
+};
 
+type Project = {
+    category: string;
+    title: string;
+    description: string;
+    imgUrl: string;
+    icons: Icon[];
+    linkProject?: string;
+};
 
-const projects = [
+const projects: Project[] = [
     {
-        title: "E-Commerce Platform",
-        description: "Plataforma de comercio electrónico completa con carrito de compras, pagos y panel de administración.",
-        tags: ["Python", "Reflex", "Django"],
-        github: "https://github.com/marcoscode23/PrototipoDelta",
-        demo: "https://deltastore-teal-wood.reflex.run/",
-    }
-]
+        category: "",
+        title:"",
+        description: "",
+        imgUrl: "",
+        icons: [
+            { src:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", alt: "Notion"},
+        ],
+        linkProject: "",
+    },
+];
+
+const ProjectCard = ({
+    project, 
+    index, 
+    isInView,
+    reverse,
+}: {
+    project: Project;
+    index: number;
+    isInView: boolean;
+    reverse:  boolean;
+}) => {
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.2 + index * 0.15 }}
+            className={` relative flex flex-col ${
+                reverse ? "md:flex-row-reverse" : "md:flex-row"
+            } items-center justify-between gap-6 md:gap-8 p-6 min-h-[400px]`}
+        >
+            {/* Info side */}
+            <div
+                className={`relative md:h-[341px] md:max-w-lg z-10 mb-4 md:mb-0 text-center ${
+                        reverse ? "md:text-right" : "md:text-left"
+                    }` }
+            >
+                <h3 className="text-muted-foreground font-semibold text-sm">
+                    {project.category}
+                </h3>
+                <h2 className="font-heading text-2xl md:text-3xl font-bold mb-2 text-foreground truncate">
+                    {project.title}
+                </h2>
+                <div
+                    className={`w-full flex gap-2 items-center justify-center ${
+                        reverse ? "md:justify-end" : "md:justify-start"
+                    }`}
+                >
+                    {project.icons.map((icon, i) => (
+                        <div
+                            key={i}
+                            className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary border border-border shadow-sm p-1.5 hover:scale-110 transition-transform duration-300"
+                        >
+                            <img className="w-full h-full" src={icon.src} alt={icon.alt} />
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Image side */}
+            <div
+                className={`relative w-full md:w-[600px] h-[341px] rounded-xl overflow-hidden border border-border shadow-lg
+                    transform transition-transform duration-300 hover:translate-y-[-5px] hover:scale-105 hover:rotate-3 group ${
+                        reverse ? "hover:rotate-1" : "hover:rotate-1"
+                    }group`}
+            >
+                <a
+                    href={project.linkProject}
+                    target="_black"
+                    rel="noopener noreferrer"
+                >
+                    <img 
+                        src={project.imgUrl}
+                        alt={`Preview de ${project.title}`}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                    />
+                    <div
+                        className={`absolute top-3 ${
+                            reverse ? "left-3" : "right-3"
+                        } bg-foreground/60 text-background text-xs px-3 py-1 rounded-md opacity-80 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-1`}
+                    >
+                        Ver proyecto
+                        <MoveRight size={12}/>
+                    </div>
+                </a>
+            </div>
+            
+            {/* Description overlay */}
+            <div
+                className={`relative w-full md:absolute md:top-1/3 ${
+                    reverse ? "md:right-0" : "md:left-0"
+                } md:mx-w-[500px]
+                    p-4 md:p-6 rounded-xl bg-secondary/80 backdrop-blur-md border border-border shadow-lg z-20 mt-4 md:mt-0 `} 
+            >
+                <p className="text-sm md:text-base leading-relaxed text-muted-foreground">
+                    {project.description}
+                </p>
+            </div>
+        </motion.div>
+    );
+};
 
 const ProjectsSection = () => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px"});
-
-
     return (
         <section id="proyectos" className="section-padding bg-background" ref={ref}>
             <div className="max-w-6xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {} }
-                    transition={{ duration: 0.7}}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.7 }}
+                    className="mb-6"
                 >
-                    <p className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4">
-                        Proyectos
-                    </p>
-                    <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-16">
-                        Mis Trabajos
+                    <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground">
+                            Proyectos
                     </h2>
                 </motion.div>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                    {projects.map((project, i ) => (
-                        <motion.div
+                
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6, delay: 0.15 }}
+                    className="text-muted-foreground text-base md:text-lg leading-relaxed mb-20 max-w-4xl"
+                >
+                    Mis proyectos reflejan mi evolución como desarrollador. Desde experimentos técnicos hasta aplicaciones completas donde
+                    puse en práctica conceptos de{" "}
+                    <span className="text-foreground text-base md:text-lg leading-relaxed mb-20 max-w-4xl">
+                        diseño, performance y usabilidad
+                    </span>
+                    . Cada uno muestra una parte de mi proceso de aprendizaje y consolidación del stack.
+                </motion.p>    
+                
+                <div className="space-y-24">
+                    {projects.map((project, i) => (
+                        <ProjectCard
                             key={project.title}
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.6, delay: i * 0.1 }}
-                            whileHover={{scale: 1.03, transition: {duration: 0.1} }}
-                            className="group border border-border bg-white rounded-sm p-8 hover:bg-secondary transition-colors duration-300 hover-lift"
-                        >
-                            <div className="flex items-start justify-between mb-4">
-                                <h3 className="font-heading text-xl font-semibold text-foreground">
-                                    {project.title}
-                                </h3>
-                                <div className="flex gap-3 text-muted-foreground">
-                                    <a href={project.github} target="_black" rel="noopener noreferrer">
-                                        <Github size={18} className="hover:text-foreground cursor-pointer transition-colors" />
-                                    </a>
-                                    <a href={project.demo} target=" _black" rel="noopener noreferrer">
-                                        <ExternalLink size={18} className="hover:text-foreground cursor-pointer transition-colors" />
-                                    </a>
-                                </div>
-                            </div>
-
-                            <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                                {project.description}
-                            </p>
-                            <div className="flex flex-wrap bg-red gap-4">
-                                {project.tags.map((tag) => (
-                                    <span
-                                    key={tag}
-                                    className="text-xs font-medium px-3 py-1 bg-accent bg-muted text-accent-foreground rounded-full"
-                                    
-                                    >
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
-                        </motion.div>
+                            project={project}
+                            index={i}
+                            isInView={isInView}
+                            reverse={i % 2 !== 0}
+                        />
                     ))}
-
                 </div>
-
             </div>
         </section>
     )
