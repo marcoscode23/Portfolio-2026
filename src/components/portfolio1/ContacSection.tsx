@@ -28,7 +28,7 @@ const ContacSection = () => {
                         Hablemos
                     </h2>
                     <p className="text-primary-foreground/60 text-lg mb-16 max-w-lg">
-                        ¿Tienes un proyecto en mente? Me encantaria escuchar ru idea.
+                        ¿Tienes un proyecto en mente? Me encantaria escuchar tu idea.
                     </p>
                 </motion.div>
                 

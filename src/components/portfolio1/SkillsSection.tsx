@@ -15,13 +15,6 @@ const categories = [
         ],
     },
     {
-        title: "Backend",
-        skills: [
-            { name: "Node.js", icon: "https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/nodejs/nodejs-plain.svg"},
-            { name: "Python", icon: "https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/python/python-original.svg"},
-        ],
-    },
-    {
         title: "Herramientas y Bases de Datos",
         skills: [
             { name: "Git", icon:"https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/git/git-original.svg"},
@@ -58,11 +51,12 @@ const SkillsSection = () => {
                         Habilidades
                     </p>
                     <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-4">
-                        Mis Habilidades
+                        Tecnologías
                     </h2>
                     <div className="w-16 h-1 bg-primary mx-auto rounded-full mb-6" />
                     <p className="text-muted-foreground max-w-2xl mx-auto">
-                        Aquí presento las tecnologías que uso en mis proyectos: frontend, backend, herramientas de desarrollo y más.
+                        A lo largo de mi recorrido profesional fui incorporando herramientas y tecnología que hoy forman
+                        parte de mi pila principal. las uso para desarrollar interfaces limpias, escalables y centradas en el usuario.
                     </p>
                 </motion.div>
 
@@ -85,7 +79,7 @@ const SkillsSection = () => {
                                         initial={{ opacity: 0, scale: 0.8 }}
                                         animate={isInView ? { opacity: 1, scale: 1 } : {}}
                                         transition={{ duration: 0.3, delay: 0.3 + catIndex * 0.1 + i * 0.05 }}
-                                        whileHover={{ scale: 1.15, backgroundColor: "#808080", transition: {duration: 0.1} }}
+                                        whileHover={{ scale: 1.15, backgroundColor: "hsl(215, 50%, 20%)", transition: {duration: 0.1} }}
                                         className="flex flex-col items-center gap-2 w-20 rounded-lg bg-background p-3 shadow-sm border border-border/50 cursor-auto"
                                     >
                                         <img

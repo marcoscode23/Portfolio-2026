@@ -50,9 +50,10 @@ const AboutSection = () => {
                             Hola, soy Marcos
                         </h3>
                         <p className="text-muted-foreground leading-relaxed mb-6">
-                            Soy un desarrollador apasionado por crear experiencias digitales que combinan
-                            funcionalidad con un diseño limpio y moderno. Me especializo en desarrollo web
-                            y siempre busco aprender nuevas tecnologías.
+                            Contruyo interfaces rápidas, accesibles y escalables. Me
+                            gusta trabajar con buenas prácticas, optimizaciones y un
+                            diseño consistente. Siempre busco aportar soluciones claras
+                            a problemas reales
                         </p>
                         <p className="text-muted-foreground leading-relaxed mb-8">
                             Cuando no estoy programando, me gusta explorar nuevas tendencias de diseño,

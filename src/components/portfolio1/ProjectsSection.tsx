@@ -18,14 +18,17 @@ type Project = {
 
 const projects: Project[] = [
     {
-        category: "",
-        title:"",
-        description: "",
-        imgUrl: "",
+        category: "Proyecto Personal",
+        title:"PrototipoDelta",
+        description: "El proyecto Deltastore es una plataforma web desarrollada con Reflex y Python, enfocada en la creación de una experiencia moderna, escalable y totalmente integrada. El siguiente cronograma detalla el proceso de desarrollo dividido en fases que abarcan desde la planificación inicial hasta el lanzamiento final, incluyendo las herramientas utilizadas para garantizar un flujo de trabajo eficiente y profesional.",
+        imgUrl: "PrototipoDelta.png",
         icons: [
-            { src:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", alt: "Notion"},
+            { src:"https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/trello/trello-original.svg", alt: "Trello"},
+            { src:"https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/python/python-original.svg", alt: "Python"},
+            { src:"https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/reflex/reflex-original.svg", alt: "Reflex"},
+            { src:"https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/css3/css3-original.svg", alt: "CSS"},
         ],
-        linkProject: "",
+        linkProject: "https://deltastore-teal-wood.reflex.run/",
     },
 ];
 
@@ -86,7 +89,7 @@ const ProjectCard = ({
             >
                 <a
                     href={project.linkProject}
-                    target="_black"
+                    target="_black" 
                     rel="noopener noreferrer"
                 >
                     <img 
@@ -110,7 +113,7 @@ const ProjectCard = ({
             <div
                 className={`relative w-full md:absolute md:top-1/3 ${
                     reverse ? "md:right-0" : "md:left-0"
-                } md:mx-w-[500px]
+                } md:max-w-[500px]
                     p-4 md:p-6 rounded-xl bg-secondary/80 backdrop-blur-md border border-border shadow-lg z-20 mt-4 md:mt-0 `} 
             >
                 <p className="text-sm md:text-base leading-relaxed text-muted-foreground">
