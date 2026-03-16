@@ -45,7 +45,7 @@ const HeroSection = () => {
                     className="inline-flex items-center gap-2 text-primary-foreground/50 hover:text-primary-foreground transition-colors text-sm tracking-widest uppercase"
                 >
                     Descubre más
-                    <ArrowDown size={16} className="animate-bounce" />
+                    <ArrowDown size={16} className="animate-bounce, bg-green-500" />
                 </motion.a>
             </div>
 

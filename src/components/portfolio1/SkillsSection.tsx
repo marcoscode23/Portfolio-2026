@@ -79,7 +79,7 @@ const SkillsSection = () => {
                                         initial={{ opacity: 0, scale: 0.8 }}
                                         animate={isInView ? { opacity: 1, scale: 1 } : {}}
                                         transition={{ duration: 0.3, delay: 0.3 + catIndex * 0.1 + i * 0.05 }}
-                                        whileHover={{ scale: 1.15, backgroundColor: "hsl(215, 50%, 20%)", transition: {duration: 0.1} }}
+                                        whileHover={{ scale: 1.15, backgroundColor: "#84cc16", transition: {duration: 0.1} }}
                                         className="flex flex-col items-center gap-2 w-20 rounded-lg bg-background p-3 shadow-sm border border-border/50 cursor-auto"
                                     >
                                         <img
