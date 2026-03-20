@@ -109,3 +109,64 @@ html {
     scroll-behavior: smooth;
 }
 
+.animated-text-yellow {
+    background: linear-gradient(
+        45deg,
+        #bfdbfe,  
+        #93c5fd,  
+        #60a5fa,  
+        #3b82f6,  
+        #dbeafe,  
+        #60a5fa,
+        #3b82f6,
+        #bfdbfe
+    );
+    background-size: 400% 400%;
+    animation: textGradient 6s ease infinite;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+    color: transparent;
+}
+
+@keyframes textGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes bounceArrow {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+.arrow-bounce {
+    animation: bounceArrow 1.5s infinite;
+}
+
+.animated-border {
+    background: linear-gradient(
+        45deg,
+        #0055ff, 
+        #00eaff, 
+        #0099ff,  
+        #eeea0c,  
+        #0055ff  
+    );
+    background-size: 400% 400%;
+    animation: borderAnimation 6s ease infinite;
+    z-index: 0;
+    border-radius: 9999px;
+}
+
+@keyframes borderAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}

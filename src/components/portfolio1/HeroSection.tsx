@@ -32,20 +32,19 @@ const HeroSection = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6 }}
-                    className="text-primary-foreground/60 font-body text-lg md:text-xl max-w-xl mx-auto mb-10"
+                    className="animated-text-yellow mt-4 font-body text-lg md:text-xl max-w-xl mx-auto mb-10"
                 >
                     Construyo experiencias digitales únicas con pasión por el diseño y la tecnología.
                 </motion.p>
 
                 <motion.a
                     href="#acerca"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1 }}
-                    className="inline-flex items-center gap-2 text-primary-foreground/50 hover:text-primary-foreground transition-colors text-sm tracking-widest uppercase"
+                    animate={{ y: [0, 10, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                    className="inline-flex items-center gap-2 text-primary-foreground/50 hover:text-blue-400 transition-colors text-sm tracking-widest uppercase"
                 >
                     Descubre más
-                    <ArrowDown size={16} className="animate-bounce, bg-green-500" />
+                    <ArrowDown size={16} className="arrow-bounce opacity-60" />
                 </motion.a>
             </div>
 
