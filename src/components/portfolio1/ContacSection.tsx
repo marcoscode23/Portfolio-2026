@@ -4,7 +4,7 @@ import { Mail, Send } from "lucide-react";
 
 const ContacSection = () => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin:"-100px" });
+    const isInView = useInView(ref, { once: true });
     const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -18,16 +18,16 @@ const ContacSection = () => {
             <div className="max-w-4xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    animate={isInView ? { opacity: 1, y: 0 } : undefined }
                     transition={{ duration: 0.7 }}
                 >
-                    <p className="text-sm tracking-[0.3] uppercase text-primary-foreground/50 mb-4">
+                    <p className="text-sm tracking-[0.3em] uppercase text-blue-400 mb-4">
                         Contacto
                     </p>
                     <h2 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
                         Hablemos
                     </h2>
-                    <p className="text-primary-foreground/60 text-lg mb-16 max-w-lg">
+                    <p className="animated-text-yellow text-lg mb-16 max-w-lg">
                         ¿Tienes un proyecto en mente? Me encantaria escuchar tu idea.
                     </p>
                 </motion.div>
@@ -37,13 +37,13 @@ const ContacSection = () => {
                         initial={{ opacity: 0, x: -30 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.7,delay: 0.2 }}
-                        className="md:coll-span-2 space-y-8"
+                        className="md:col-span-2 space-y-8"
                     >
                         <div className="flex items-start gap-4">
                             <Mail size={20} className="text-primary-foreground/50 mt-1" />
                             <div>
-                                <p className="text-sm text-primary-foreground/50 mb-1">Ubicación</p>
-                                <p className="text-primary-foreground/50 font-medium">Corrientes, Argentina</p>
+                                <p className="text-sm text-primary-foreground/50 mb-1">Email</p>
+                                <p className="text-primary-foreground/50 font-medium">marcoscode23@gmail.com</p>
                             </div>
                         </div>
                     </motion.div>
@@ -61,7 +61,7 @@ const ContacSection = () => {
                             required
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                            className="w-full bg-transparent border-b border-primary-foreground/20 py-3 text-primary-foreground placeholder:text-primary-foreground/30 focus:border-primary-foreground/60 focus:outline-none transition-colors text-sm"
+                            className="w-full bg-transparent border-b border-primary-foreground/20 py-3 text-primary-foreground placeholder:text-primary-foreground/30 focus:border-primary-foreground/50 focus:outline-none transition-colors text-sm"
                         />
                         <input
                             type="text"

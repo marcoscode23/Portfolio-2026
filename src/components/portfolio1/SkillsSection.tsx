@@ -9,9 +9,11 @@ const categories = [
             { name: "CSS", icon: "https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/css3/css3-original.svg"},
             { name: "JavaScript", icon: "https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/javascript/javascript-original.svg"},
             { name: "TypeScript", icon: "https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/typescript/typescript-original.svg"},
+            { name: "Python", icon: "https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/python/python-original.svg"},
+            { name: "Reflex", icon: "https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/reflex/reflex-original.svg"},
             { name: "Tailwindcss", icon: "https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/tailwindcss/tailwindcss-original.svg"},
             { name: "React", icon: "https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/react/react-original.svg"},
-            { name: "Reflex", icon: "https://raw.githubusercontent.com/devicons/devicon/670a611ad1c3e057ee385168d65c8ab27a7e1be5/icons/reflex/reflex-original.svg"},
+            
         ],
     },
     {
@@ -43,20 +45,27 @@ const SkillsSection = () => {
             <div className="max-w-6xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    animate={isInView ? { opacity: 1, y: 0 } : undefined}
                     transition={{ duration: 0.7 }}
                     className="text-center mb-16"
                 >
-                    <p className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-4">
-                        Habilidades
-                    </p>
                     <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-4">
-                        Tecnologías
+                        Habilidades
                     </h2>
-                    <div className="w-16 h-1 bg-primary mx-auto rounded-full mb-6" />
+                    <div className="w-16 h-1 mx-auto rounded-full mb-6 bg-blue-400" />
                     <p className="text-muted-foreground max-w-2xl mx-auto">
-                        A lo largo de mi recorrido profesional fui incorporando herramientas y tecnología que hoy forman
-                        parte de mi pila principal. las uso para desarrollar interfaces limpias, escalables y centradas en el usuario.
+                        A lo largo de mi{" "}
+                        <span className="animated-text-yellow">
+                            recorrido profesional
+                        </span>{" "} 
+                            fui incorporando herramientas y tecnología que hoy{" "}
+                        <span className="animated-text-yellow">
+                            forman parte de mi pila principal.
+                        </span>{" "}
+                        Las uso para desarrollar{" "}
+                        <span className="animated-text-yellow">
+                            interfaces limpias, escalables y centradas en el usuario.
+                        </span>
                     </p>
                 </motion.div>
 
@@ -80,7 +89,7 @@ const SkillsSection = () => {
                                         animate={isInView ? { opacity: 1, scale: 1 } : {}}
                                         transition={{ duration: 0.3, delay: 0.3 + catIndex * 0.1 + i * 0.05 }}
                                         whileHover={{ scale: 1.15, backgroundColor: "#60a5fa", borderColor: "hsl(195, 100%, 50%)",boxShadow: "0 0 15px hsl(195, 100%, 50%)", transition: {duration: 0.1} }}
-                                        className="flex flex-col items-center gap-2 w-20 rounded-lg bg-background p-3 shadow-sm border border-border/50 cursor-auto"
+                                        className="flex flex-col items-center gap-2 w-20 rounded-lg bg-background p-3 shadow-sm border border-border/50"
                                     >
                                         <img
                                             src={skill.icon}

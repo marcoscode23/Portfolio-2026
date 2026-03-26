@@ -25,8 +25,8 @@
         --muted: 0 0% 95%;
         --muted-foreground: 0 0% 40%;
 
-        --accent: 0 0% 90%;
-        --accent-foreground: 0 0% 5%;
+        --accent: 217 91% 60%;
+        --accent-foreground: 0 0% 100%;
         
         --destructive: 0 84.2% 60.2%;
         --destructive-foreground: 210 40% 98%;
@@ -103,11 +103,48 @@
     .hover-lift:hover {
         transform: translateY(-4px);
     }
+
+    /*color neon del navbar*/
+    .neon-border {
+        @apply border-2 border-blue-400;
+        box-shadow: 0 0 15px hsl(195,100%,50%);
+    }
+
+    /*Imagen de proyecto*/
+    .project-card {
+        @apply border border-border shadow-lg transition-transform duration-300
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px) scale(1.05);
+    }
+
+    .icon-badge {
+        @apply flex h-10 w-10 items-center justify-center rounded-full bg-secondary border border-border shadow-sm p-1.5 transition-transform duration-300;
+    }
+
+    .icon-badge:hover {
+        transform: scale(1.1);
+    }
+
+    .glass-card {
+        @apply bg-secondary/80 backdrop-blur-md border border-border shadow-lg;
+    }
 }
 
 html {
     scroll-behavior: smooth;
 }
+
+/*Lineas de portada*/
+.grid-background {
+    background-image:
+        linear-gradient(hsl(0 0% 100%) 1px, transparent 1px),
+        linear-gradient(90deg, hsl(0 0% 100%) 1px, transparent 1px);
+        background-size: 60px 60px;
+}
+
+
 
 .animated-text-yellow {
     background: linear-gradient(
@@ -150,6 +187,7 @@ html {
     animation: bounceArrow 1.5s infinite;
 }
 
+/*Foto de perfil*/
 .animated-border {
     background: linear-gradient(
         45deg,
@@ -170,3 +208,4 @@ html {
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
+

@@ -58,7 +58,7 @@ const ProjectCard = ({
                         reverse ? "md:text-right" : "md:text-left"
                     }` }
             >
-                <h3 className="text-muted-foreground font-semibold text-sm">
+                <h3 className="font-semibold text-sm text-blue-400">
                     {project.category}
                 </h3>
                 <h2 className="font-heading text-2xl md:text-3xl font-bold mb-2 text-foreground truncate">
@@ -69,12 +69,15 @@ const ProjectCard = ({
                         reverse ? "md:justify-end" : "md:justify-start"
                     }`}
                 >
-                    {project.icons.map((icon, i) => (
+                    {project.icons.map((icon) => (
                         <div
-                            key={i}
-                            className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary border border-border shadow-sm p-1.5 hover:scale-110 transition-transform duration-300"
+                            key={icon.src}
+                            className="icon-badge"
                         >
-                            <img className="w-full h-full" src={icon.src} alt={icon.alt} />
+                            <img className="w-full h-full" 
+                                src={icon.src} 
+                                alt={icon.alt} 
+                            />
                         </div>
                     ))}
                 </div>
@@ -82,14 +85,13 @@ const ProjectCard = ({
 
             {/* Image side */}
             <div
-                className={`relative w-full md:w-[600px] h-[341px] rounded-xl overflow-hidden border border-border shadow-lg
-                    transform transition-transform duration-300 hover:translate-y-[-5px] hover:scale-105 hover:rotate-3 group ${
-                        reverse ? "hover:rotate-1" : "hover:rotate-1"
-                    }group`}
+                className={`relative w-full md:w-[600px] h-[341px] rounded-xl overflow-hidden project-card group ${
+                        reverse ? "hover:rotate-3" : "hover:rotate-3"
+                    }`}
             >
                 <a
                     href={project.linkProject}
-                    target="_black" 
+                    target="_blank" 
                     rel="noopener noreferrer"
                 >
                     <img 
@@ -114,7 +116,7 @@ const ProjectCard = ({
                 className={`relative w-full md:absolute md:top-1/3 ${
                     reverse ? "md:right-0" : "md:left-0"
                 } md:max-w-[500px]
-                    p-4 md:p-6 rounded-xl bg-secondary/80 backdrop-blur-md border border-border shadow-lg z-20 mt-4 md:mt-0 `} 
+                    p-4 md:p-6 rounded-xl glass-card z-20 mt-4 md:mt-0 `} 
             >
                 <p className="text-sm md:text-base leading-relaxed text-muted-foreground">
                     {project.description}
@@ -137,19 +139,19 @@ const ProjectsSection = () => {
                     className="mb-6"
                 >
                     <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground">
-                            Proyectos
+                        Proyectos
                     </h2>
                 </motion.div>
                 
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    animate={isInView ? { opacity: 1, y: 0 } : undefined}
                     transition={{ duration: 0.6, delay: 0.15 }}
                     className="text-muted-foreground text-base md:text-lg leading-relaxed mb-20 max-w-4xl"
                 >
                     Mis proyectos reflejan mi evolución como desarrollador. Desde experimentos técnicos hasta aplicaciones completas donde
                     puse en práctica conceptos de{" "}
-                    <span className="text-foreground text-base md:text-lg leading-relaxed mb-20 max-w-4xl">
+                    <span className="animated-text-yellow">
                         diseño, performance y usabilidad
                     </span>
                     . Cada uno muestra una parte de mi proceso de aprendizaje y consolidación del stack.

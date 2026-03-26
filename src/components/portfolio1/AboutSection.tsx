@@ -25,10 +25,10 @@ export default function AboutSection() {
                         transition={{ duration: 0.7, delay: 0.2 }}
                         className="flex flex-col justify-center"
                     >
-                        <p className="text-sm tracking-[0.3em] uppercase text-highlight mb-4">
+                        <p className="text-sm tracking-[0.3em] uppercase mb-4">
                             Acerca de Mí
                         </p>
-                        <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-2">
+                        <h2 className="font-heading text-4xl md:text-5xl font-bold mb-2">
                             
                             Hola, <span className="animated-text-yellow">soy Marcos</span>
                         </h2>
@@ -36,7 +36,7 @@ export default function AboutSection() {
                             Developer FrontEnd
                         </p>
                         <p className="text-bold leading-relaxed mb-6 max-w-xl">
-                                Construyo interfaces rápidas, accesibles y escalables. <span className="text-highlight animated-text-yellow">Me gusta trabajar con buenas prácticas, optimización y un diseño.</span> Siempre busco aportar soluciones claras a problemas reales.
+                                Construyo interfaces rápidas, accesibles y escalables. <span className="animated-text-yellow">Me gusta trabajar con buenas prácticas, optimización y un diseño.</span> Siempre busco aportar soluciones claras a problemas reales.
                         </p>
 
                         <div className="flex items-center gap-5">

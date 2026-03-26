@@ -25,17 +25,8 @@ const HeroSection = () => {
                 >
                     FrontEnd
                     <br />
-                    <span className="text-primary-foreground/40">Developer</span>
+                    <span className="animated-text-yellow">Developer</span>
                 </motion.h1>
-                
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6 }}
-                    className="animated-text-yellow mt-4 font-body text-lg md:text-xl max-w-xl mx-auto mb-10"
-                >
-                    Construyo experiencias digitales únicas con pasión por el diseño y la tecnología.
-                </motion.p>
 
                 <motion.a
                     href="#acerca"
@@ -50,10 +41,7 @@ const HeroSection = () => {
 
             {/* Decorative grid */}
             <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
-                <div className="w-full h-full" style={{
-                backgroundImage: "linear-gradient(hsl(0 0% 100%) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 100%) 1px, transparent 1px)",
-                backgroundSize: "60px 60px"
-                }} />
+                <div className="w-full h-full grid-background"/>
             </div>
         </section>
     );
