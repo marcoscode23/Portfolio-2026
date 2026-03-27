@@ -16,7 +16,7 @@ export default function AboutSection() {
     const isInView = useInView(ref, {once: true, margin:"-100px"});
 
     return (
-        <section id="acerca" className="section-padding bg-background" ref={ref}>
+        <section id="acercademi" className="section-padding bg-background" ref={ref}>
             <div className="max-w-6xl mx-auto">
                 <div className="grid md:grid-cols-[1fr_auto] gap-12 md:gap-12 items-center">
                     <motion.div
@@ -33,7 +33,7 @@ export default function AboutSection() {
                             Hola, <span className="animated-text-yellow">soy Marcos</span>
                         </h2>
                         <p className="text-bold text-lg mb-6">
-                            Developer FrontEnd
+                            Frontend Developer 
                         </p>
                         <p className="text-bold leading-relaxed mb-6 max-w-xl">
                                 Construyo interfaces rápidas, accesibles y escalables. <span className="animated-text-yellow">Me gusta trabajar con buenas prácticas, optimización y un diseño.</span> Siempre busco aportar soluciones claras a problemas reales.

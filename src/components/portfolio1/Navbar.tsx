@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 
 const navItems = [
     { label: "Inicio", href: "#inicio" },
-    { label: "Acerca de mi", href: "#acerca" },
+    { label: "Acerca de mi", href: "#acercademi" },
     { label: "Habilidades", href: "#habilidades" },
     { label: "Proyectos", href: "#proyectos" },
     { label: "Contacto", href: "#contacto" },
