@@ -23,9 +23,9 @@ const HeroSection = () => {
                     transition={{ delay: 0.4, duration: 0.7 }}
                     className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground leading-[0.95] md-6"
                 >
-                    FrontEnd
+                    Developer
                     <br />
-                    <span className="animated-text-yellow">Developer</span>
+                    <span className="animated-text-yellow">Frontend</span>
                 </motion.h1>
 
                 <motion.a
