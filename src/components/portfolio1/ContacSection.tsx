@@ -1,17 +1,38 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Mail, Send } from "lucide-react";
+import { Mail, Send, Loader2 } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import {toast} from "sonner";
 
 const ContacSection = () => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true });
+    const isInView = useInView(ref, { once: true, margin: "-100px" });
     const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        alert("¡Mensaje enviado! (Demo)");
-        setFormData({name: "", email: "", message: "" });
-    };
+    const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    try {
+        await emailjs.send(
+            "service_8bt25w4",
+            "template_rzqo26p",
+        {
+            from_name: formData.name.trim(),
+            from_email: formData.email.trim(),
+            message: formData.message.trim(),
+        },
+        "bpW6evIyJWfWzD7FS"
+    );
+        toast.success("¡Mensaje enviado correctamente!");
+        setFormData({ name: "", email: "", message: "" });
+    } catch (err) {
+        console.error(err);
+        toast.error("Error al enviar el mensaje. Intenta de nuevo.");
+    } finally {
+        setIsSubmitting(false);
+    }
+};
 
     return (
         <section id="contacto" className="section-padding bg-primary" ref={ref}>
@@ -81,10 +102,20 @@ const ContacSection = () => {
                         />
                         <button
                             type="submit"
+                            disabled={isSubmitting}
                             className="inline-flex items-center gap-2 bg-primary-foreground text-primary px-8 py-3 text-sm font-heading font-medium tracking-wide hover:opacity-90 transition-opacity rounded-sm mt-4"
                         >
-                            Enviar mensaje
-                            <Send size={14} />
+                            {isSubmitting ? (
+                                <>
+                                    Enviando...
+                                    <Loader2 size={14} className="animate-spin"/>
+                                </>
+                            ) : (
+                                <>
+                                    Enviar mensaje
+                                    <Send size={14} />
+                                </>
+                            )}
                         </button>
                     </motion.form>
                 </div>
